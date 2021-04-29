@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.header {
+  margin-bottom: 50px;
+}
+
+.header__title {
+  font-size: 2rem;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.header__title--count {
+  font-size: 1.2rem;
+} 
+
+.table {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.todo {
+  cursor: pointer;
+}
+
+.form {
+  padding-left: 10px;
+  width: 70%;
+  justify-self: flex-end;
+  margin-right: 30px;
+}
+
+.form__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form__btn {
+  margin-top: 20px;
+}
+
+.complete {
+  text-decoration: line-through;
+}

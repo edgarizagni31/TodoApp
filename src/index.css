@@ -1,60 +1,49 @@
-body {
+* {
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  align-items: center;
+  background-color: hsl(235, 21%, 11%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width:  100vw;
+  background-image: url('./assets/images/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
 }
 
 .main {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  margin-top: 70px;
+  width: 25%;
 }
+
 .header {
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .header__title {
-  font-size: 2rem;
-  padding-top: 20px;
-  padding-left: 10px;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
 }
 
-.header__title--count {
-  font-size: 1.2rem;
-} 
 
-.table {
-  margin-left: 10px;
-  width: 100%;
-}
+@media screen and (max-width: 450px) {
+  html,
+  body {
+    background-color: url('./assets/images/bg-mobile-dark.jpg');
+  }
 
-.todo {
-  cursor: pointer;
-}
-
-.form {
-  padding-left: 10px;
-  width: 70%;
-  justify-self: flex-end;
-  margin-right: 30px;
-}
-
-.form__title {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.form__btn {
-  margin-top: 20px;
-}
-
-.complete {
-  text-decoration: line-through;
+  .main {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }

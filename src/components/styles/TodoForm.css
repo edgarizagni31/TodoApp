@@ -1,0 +1,26 @@
+.form {
+  margin-bottom: 20px;
+}
+
+.form__input {
+  background-color: hsl(235, 24%, 19%);
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  height: 38px;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.form__btn {
+  height: 32px;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  background-color: hsl(234,39%,85%);
+  border: none;
+}

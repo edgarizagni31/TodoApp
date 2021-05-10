@@ -27,12 +27,12 @@ export const TodoApp = () => {
     return (
         <>
             <header className = 'header'>
-                <h1 className = 'header__title'> Todo App <small className = 'header__title--count'> ( {todos.length} ) </small> </h1>
+                <h1 className = 'header__title'> Todo </h1>
             </header>
-            <div className = 'main'>
-                <TodoList todos = {todos} deleteTodo = { deleteTodo } toogleTodo = { toogleTodo }/>
+            <main>
                 <TodoForm addTodo = {addTodo}/>
-            </div>
+                <TodoList todos = {todos} deleteTodo = { deleteTodo } toogleTodo = { toogleTodo }/>
+            </main>
         </>
     )
 }

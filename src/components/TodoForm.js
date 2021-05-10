@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 
+import './styles/TodoForm.css';
+
 export const TodoForm = ( { addTodo }) => {
     const inputEl = useRef(null);
 
@@ -21,19 +23,15 @@ export const TodoForm = ( { addTodo }) => {
     }
 
     return (
-        <form className = 'form'>
-            <h2 className = 'form__title'>Agregar Todo </h2>
-            <input 
+        <form className = 'form' onSubmit = {handleSubmit}>
+            <input
                 type = 'text'
                 name = 'desc'
-                placeholder = 'Aprender ...'
+                placeholder = 'Crear nuevo todo...'
                 ref = {inputEl}
                 autoComplete = 'off'
-                className = 'form-control'
+                className = 'form__input'
             />
-            <button className = 'btn btn-outline-primary form__btn' onClick = {handleSubmit}>
-                Agregar
-            </button>
         </form>
     )
 }

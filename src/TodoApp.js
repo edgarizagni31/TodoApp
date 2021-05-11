@@ -31,7 +31,7 @@ export const TodoApp = () => {
             </header>
             <main>
                 <TodoForm addTodo = {addTodo}/>
-                <TodoList todos = {todos} deleteTodo = { deleteTodo } toogleTodo = { toogleTodo }/>
+                <TodoList todos = {todos} deleteTodo = { deleteTodo } toogleTodo = { toogleTodo }  />
             </main>
         </>
     )

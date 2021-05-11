@@ -27,7 +27,7 @@ export const TodoForm = ( { addTodo }) => {
             <input
                 type = 'text'
                 name = 'desc'
-                placeholder = 'Crear nuevo todo...'
+                placeholder = 'Crear un nuevo todo...'
                 ref = {inputEl}
                 autoComplete = 'off'
                 className = 'form__input'

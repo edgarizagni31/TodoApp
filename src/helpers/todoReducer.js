@@ -6,6 +6,8 @@ export const todoReducer =  ( state, action ) => {
             return state.filter( todo => todo.id !== action.payload );
         case 'toogle':
             return state.map( todo => ( todo.id === action.payload ) ? { ...todo, done: !todo.done} : todo );
+        case 'delete-completed':
+            return state.filter( todo => todo.done === false );
         default: 
             return state;
     }

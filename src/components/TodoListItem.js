@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { BsX } from "react-icons/bs";
+import { TodoContext } from "../TodoContext";
 
-export const TodoListItem = ({ todo, deleteTodo, toogleTodo }) => {
-  const handleRemoveTodo = (id) => deleteTodo(id);
-  const handleToogleTodo = (id) => toogleTodo(id);
+export const TodoListItem = ({ todo }) => {
+  const { dispatch } = useContext(TodoContext);
+
+  const handleRemoveTodo = (id) => dispatch( { type: 'delete', payload: id} ) ;
+  const handleToogleTodo = (id) => dispatch( { type: 'toogle', payload: id} ) ;
 
   return (
     <div className='todo-list__item'>

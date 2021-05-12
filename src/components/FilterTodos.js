@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../TodoContext'
 import { TodoListItem } from './TodoListItem'
 
-const FilterTodos = ( { type, todos, deleteTodo, toogleTodo } ) => {
+const FilterTodos = ( { type } ) => {
+    const { todos } = useContext(TodoContext);
 
     return (
         <>
@@ -13,8 +15,6 @@ const FilterTodos = ( { type, todos, deleteTodo, toogleTodo } ) => {
                     <TodoListItem
                         key = {todo.id}
                         todo = {todo}
-                        deleteTodo = {deleteTodo}
-                        toogleTodo = {toogleTodo}
                     />
                 ))
                 :
@@ -23,8 +23,6 @@ const FilterTodos = ( { type, todos, deleteTodo, toogleTodo } ) => {
                     <TodoListItem
                         key = {todo.id}
                         todo = {todo}
-                        deleteTodo = {deleteTodo}
-                        toogleTodo = {toogleTodo}
                     />
                 ))
             }

@@ -1,44 +1,31 @@
-import React, { useState }  from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState }  from 'react';
 
 import { TodoListItem } from './TodoListItem';
 
 import './styles/TodoList.css';
+
 import FilterTodos from './FilterTodos';
 
-export const TodoList = ({ todos, deleteTodo, toogleTodo }) => {
+import { TodoContext } from '../TodoContext';
+
+export const TodoList = () => {
+  const { todos, dispatch } = useContext(TodoContext);
 
   const [ filter, setFilter ] = useState({ isFilter: false, type: ''});
-  const [ count, setCount ] = useState( todos.length );
 
   const handleViewAll = () => {
-   setFilter( {isFilter: false, type: ''} );
-   setCount( todos.length );    
+    setFilter( {isFilter: false, type: ''} );
   }; 
 
   const handleViewActives = () => {
-    let cont = 0;
-
-    todos.forEach(todo => {
-      !todo.done && cont++;
-    });
-
-    setCount(cont);
-
     setFilter( {isFilter: true, type: 'actives'} );
   };
 
   const handleViewComplete = () => {
-    let cont = 0;
-
-    todos.forEach(todo => {
-      todo.done && cont++;
-    });
-
-    setCount(cont);
-
     setFilter( {isFilter: true, type: 'complete'} );
   };
+
+  const deleteCompleted = () => dispatch( { type: 'delete-completed' } )
 
   return (
     <section className='todo-list'>
@@ -46,24 +33,16 @@ export const TodoList = ({ todos, deleteTodo, toogleTodo }) => {
         {
           !filter.isFilter ?
           todos.map( todo => (
-            <TodoListItem
-              key = {todo.id}
-              todo = {todo}
-              deleteTodo = {deleteTodo}
-              toogleTodo = {toogleTodo}
-            />
+            <TodoListItem key = { todo.id } todo = {todo} />
           ))
           :
           <FilterTodos 
             type = {filter.type}
-            todos = {todos}
-            deleteTodo = {deleteTodo}
-            toogleTodo = {toogleTodo}
           />
         }
       </article>
       <article className='todo-list__op'>
-        <p className='todo-list__total'>Total: {count} </p>
+        <p className='todo-list__total'>Total: { todos.length} </p>
         <div className='todo-list__options'>
           <p 
             className={ `${!filter.isFilter && 'option--active' } todo-list__option `} 
@@ -84,14 +63,13 @@ export const TodoList = ({ todos, deleteTodo, toogleTodo }) => {
             Completadas
           </p>
         </div>
-        <p className='todo-list__delete-all'>Borrar completadas</p>
+        <p 
+          onClick = {deleteCompleted}
+          className='todo-list__delete-all'
+        >
+          Borrar completadas
+        </p>
       </article>
     </section>
   );
-};
-
-TodoList.propTypes = {
-  todos: PropTypes.array.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-  toogleTodo: PropTypes.func.isRequired,
 };

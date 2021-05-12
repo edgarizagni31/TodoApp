@@ -65,13 +65,22 @@ export const TodoList = ({ todos, deleteTodo, toogleTodo }) => {
       <article className='todo-list__op'>
         <p className='todo-list__total'>Total: {count} </p>
         <div className='todo-list__options'>
-          <p className='todo-list__option' onClick={handleViewAll}>
+          <p 
+            className={ `${!filter.isFilter && 'option--active' } todo-list__option `} 
+            onClick={handleViewAll}
+          >
             Todas
           </p>
-          <p className='todo-list__option' onClick={handleViewActives}>
+          <p 
+            className={ `${filter.type === 'actives' && 'option--active' } todo-list__option `} 
+            onClick={handleViewActives}
+          >
             Activas
           </p>
-          <p className='todo-list__option' onClick={handleViewComplete}>
+          <p 
+            onClick={handleViewComplete}
+            className={ `${filter.type === 'complete' && 'option--active' } todo-list__option `} 
+          >
             Completadas
           </p>
         </div>

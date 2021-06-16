@@ -2,14 +2,14 @@ import React  from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 
-import { TodoApp } from "./TodoApp";
+import MainApp from "./MainApp";
 
 import "./index.css";
 
-
 ReactDOM.render(
-    <TodoApp />, 
+    <MainApp />, 
     document.getElementById("root")
 );
 
 reportWebVitals();
+

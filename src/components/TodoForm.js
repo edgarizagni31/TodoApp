@@ -1,17 +1,17 @@
-import React, { useContext, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { TodoContext } from '../TodoContext';
 
 import './styles/TodoForm.css';
 
-export const TodoForm = () => {
+const TodoForm = () => {
     const inputEl = useRef(null);
     const { dispatch } = useContext(TodoContext);
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         let todo;
 
-        if (inputEl.current.value !== "") {
+        if (inputEl.current.value !== '') {
             todo = {
                 id: Date.now(),
                 desc: inputEl.current.value,
@@ -19,9 +19,9 @@ export const TodoForm = () => {
             };
 
             dispatch( {  type: 'add', payload: todo } );
-            inputEl.current.value = "";
+            inputEl.current.value = '';
         }else {
-            alert("Este campo no puede estar vacio");
+            alert('Este campo no puede estar vacio');
         }
     }
 
@@ -38,3 +38,6 @@ export const TodoForm = () => {
         </form>
     )
 }
+
+export default TodoForm;
+

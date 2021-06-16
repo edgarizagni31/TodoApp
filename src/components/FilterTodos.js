@@ -1,33 +1,18 @@
-import React, { useContext } from 'react'
-import { TodoContext } from '../TodoContext'
-import { TodoListItem } from './TodoListItem'
+import { useContext } from 'react';
+import { TodoContext } from '../TodoContext';
+import FilterTodoItem from './FilterTodoItem';
 
-const FilterTodos = ( { type } ) => {
-    const { todos } = useContext(TodoContext);
+const FilterTodos = () => {
+    const { resetTodos, filterComplete, filterActivies } = useContext(TodoContext);
 
     return (
-        <>
-            {
-                type === 'actives'
-                ?
-                todos.map( todo => (
-                    !todo.done &&
-                    <TodoListItem
-                        key = {todo.id}
-                        todo = {todo}
-                    />
-                ))
-                :
-                todos.map( todo => (
-                    todo.done &&
-                    <TodoListItem
-                        key = {todo.id}
-                        todo = {todo}
-                    />
-                ))
-            }
-        </>
+        <div className = 'todo-list__options' >
+          <FilterTodoItem fn = { resetTodos } text = 'Todas' />
+          <FilterTodoItem fn = { filterActivies} text = 'Activas' />
+          <FilterTodoItem fn = { filterComplete } text = 'Completadas' />
+        </div>
     )
 }
 
-export default FilterTodos
+export default FilterTodos;
+

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to FilterTodoItem should displayed be correctly 1`] = `
+<Fragment>
+  <button
+    className="todo-list__option"
+    onClick={[MockFunction]}
+  >
+    Activas
+  </button>
+</Fragment>
+`;

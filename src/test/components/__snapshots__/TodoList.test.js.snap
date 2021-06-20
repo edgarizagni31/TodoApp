@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to TodoList should be displayed correctly 1`] = `
+<Fragment>
+  <TodoListItem
+    key="1"
+    todo={
+      Object {
+        "desc": "Aprender mongo",
+        "done": false,
+        "id": 1,
+      }
+    }
+  />
+  <TodoListItem
+    key="2"
+    todo={
+      Object {
+        "desc": "Aprender express",
+        "done": false,
+        "id": 2,
+      }
+    }
+  />
+</Fragment>
+`;

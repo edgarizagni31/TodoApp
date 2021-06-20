@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to TodoListItem should be displayed correctly 1`] = `
+<div
+  className="todo-list__item"
+>
+  <button
+    aria-label="completado"
+    className="false todo-list__btn "
+    onClick={[Function]}
+  />
+  <p
+    className="false todo-list__text"
+  >
+    Aprender mongo
+  </p>
+  <svg
+    aria-label="eliminar todo"
+    className="todo-list__icon"
+    fill="currentColor"
+    height="1em"
+    onClick={[Function]}
+    stroke="currentColor"
+    strokeWidth="0"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+    viewBox="0 0 16 16"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      clipRule="evenodd"
+      d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+      fillRule="evenodd"
+      key="0"
+    />
+    <path
+      clipRule="evenodd"
+      d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+      fillRule="evenodd"
+      key="1"
+    />
+  </svg>
+</div>
+`;

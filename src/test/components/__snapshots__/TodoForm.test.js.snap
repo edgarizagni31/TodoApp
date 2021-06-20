@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to TodoForm should be displayed correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    className="form__input"
+    name="desc"
+    onChange={[Function]}
+    placeholder="Crear un nuevo todo..."
+    type="text"
+  />
+</form>
+`;

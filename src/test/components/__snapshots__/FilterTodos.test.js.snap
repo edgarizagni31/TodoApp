@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to FilterTodos should be displayed correctly 1`] = `
+<div
+  aria-label="filtrar todos por "
+  className="todo-list__options"
+>
+  <button
+    className="todo-list__option"
+    onClick={[MockFunction]}
+  >
+    Todas
+  </button>
+  <button
+    className="todo-list__option"
+    onClick={[MockFunction]}
+  >
+    Activas
+  </button>
+  <button
+    className="todo-list__option"
+    onClick={[MockFunction]}
+  >
+    Completadas
+  </button>
+</div>
+`;

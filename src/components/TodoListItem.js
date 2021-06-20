@@ -10,15 +10,16 @@ const TodoListItem = ({ todo }) => {
     dispatch( { type: 'delete', payload: id} )
   };
 
-  const handleToogleTodo = (id) => {
-    dispatch( { type: 'toogle', payload: id} )
+  const handleToggleTodo = (id) => {
+    dispatch( { type: 'toggle', payload: id} )
   };
 
   return (
     <div className='todo-list__item'>
       <button
         className={`${todo.done && "todo-list__btn--active"} todo-list__btn `}
-        onClick={() => handleToogleTodo(todo.id)}
+        aria-label = 'completado'
+        onClick={() => handleToggleTodo(todo.id)}
       ></button>
       <p className={`${todo.done && 'complete'} todo-list__text`}>
         {todo.desc}
@@ -26,10 +27,10 @@ const TodoListItem = ({ todo }) => {
       <BsX
         className='todo-list__icon'
         onClick={() => handleRemoveTodo(todo.id)}
+        aria-label = 'eliminar todo'
       />
     </div>
   );
 };
 
 export default TodoListItem;
-

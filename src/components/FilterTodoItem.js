@@ -1,12 +1,13 @@
 const FilterTodoItem = ( { text, fn  }  ) => {
     return (
-        <p 
-          className= 'todo-list__option'
-          onClick = { fn }
-        >
-            { text }
-        </p>
-
+        <>
+            <button 
+              className= 'todo-list__option'
+              onClick = { fn }
+            >
+                { text }
+            </button>
+        </>
     )
 }
 

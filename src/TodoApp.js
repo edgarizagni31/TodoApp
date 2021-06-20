@@ -8,8 +8,10 @@ import TodoList from './components/TodoList';
 
 const TodoApp = () => {
     const { listTodos, dispatch } = useContext(TodoContext);
-    const deleteCompleted = () => dispatch( { type: 'delete-completed' } )
-      
+    const deleteCompleted = () => {
+        dispatch( { type: 'delete-completed' } );
+    };
+
     return (
         <>
             <header className = 'header'>
@@ -24,18 +26,17 @@ const TodoApp = () => {
                     <article className = 'todo-list__op'>
                         <p className = 'todo-list__total'>Total: { listTodos.length} </p>
                         <FilterTodos />
-                        <p 
+                        <button 
                           onClick = {deleteCompleted}
                           className = 'todo-list__delete-all'
                          >
                           Borrar completadas
-                        </p>
+                        </button>
                     </article>
                 </section> 
             </main>
         </>
     )
 }
-
 
 export default TodoApp;

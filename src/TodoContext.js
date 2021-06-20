@@ -19,7 +19,7 @@ const  TodoProvider = ( {children} ) => {
       setListTodos( todos.filter( (t) => t.done === true ) );
     }
   
-    const filterActivies =  () => {
+    const filterActives =  () => {
       setListTodos( todos.filter( (t) => t.done === false ) )
     }
 
@@ -34,7 +34,7 @@ const  TodoProvider = ( {children} ) => {
                     listTodos,
                     dispatch,
                     resetTodos,
-                    filterActivies,
+                    filterActives,
                     filterComplete
                 }
             }
@@ -45,4 +45,3 @@ const  TodoProvider = ( {children} ) => {
 }
 
 export default TodoProvider;
-

@@ -3,12 +3,12 @@ import { TodoContext } from '../TodoContext';
 import FilterTodoItem from './FilterTodoItem';
 
 const FilterTodos = () => {
-    const { resetTodos, filterComplete, filterActivies } = useContext(TodoContext);
+    const { resetTodos, filterComplete, filterActives } = useContext(TodoContext);
 
     return (
-        <div className = 'todo-list__options' >
+        <div className = 'todo-list__options' aria-label = 'filtrar todos por '>
           <FilterTodoItem fn = { resetTodos } text = 'Todas' />
-          <FilterTodoItem fn = { filterActivies} text = 'Activas' />
+          <FilterTodoItem fn = { filterActives} text = 'Activas' />
           <FilterTodoItem fn = { filterComplete } text = 'Completadas' />
         </div>
     )

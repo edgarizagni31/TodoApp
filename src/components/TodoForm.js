@@ -32,6 +32,7 @@ const TodoForm = () => {
                 name = 'desc'
                 placeholder = 'Crear un nuevo todo...'
                 ref = {inputEl}
+                onChange = { (e) => inputEl.current.value = e.target.value }
                 autoComplete = 'off'
                 className = 'form__input'
             />
@@ -40,4 +41,3 @@ const TodoForm = () => {
 }
 
 export default TodoForm;
-

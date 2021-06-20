@@ -80,6 +80,15 @@
 .todo-list__delete-all {
   margin-right: 10px;
   cursor: pointer;
+  font-family: 'Josefin Sans';
+}
+
+.todo-list__delete-all,
+.todo-list__option {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #D2D3DB;
 }
 
 .option--active {

@@ -15,4 +15,3 @@ const TodoList = ( { listTodos } ) => {
 };
 
 export default TodoList;
-
